@@ -19,18 +19,60 @@ func main() {
 	fmt.Println("# - A.40.2. Method Milik time.Time");
 	var now = time.Now()
 	fmt.Println("year:", now.Year(), "month:", now.Month())
-	fmt.Println("YEAR DAY : ", now.YearDay());
-	fmt.Println("WEEK DAY : ", now.Weekday());
-	fmt.Println("YEAR DAY : ", now.YearDay());
-	fmt.Println("YEAR DAY : ", now.YearDay());
-	fmt.Println("YEAR DAY : ", now.YearDay());
-	fmt.Println("YEAR DAY : ", now.YearDay());
-	fmt.Println("YEAR DAY : ", now.YearDay());
-	fmt.Println("YEAR DAY : ", now.YearDay());
-	fmt.Println("YEAR DAY : ", now.YearDay());
-	fmt.Println("YEAR DAY : ", now.YearDay());
-	fmt.Println("YEAR DAY : ", now.YearDay());
-	fmt.Println("YEAR DAY : ", now.YearDay());
-	fmt.Println("YEAR DAY : ", now.YearDay());
-	fmt.Println("YEAR DAY : ", now.YearDay());
+	fmt.Println("YEAR DAY 	: ", now.YearDay());
+	fmt.Println("WEEK DAY 	: ", now.Weekday());
+	// fmt.Println("ISO WEEK : ", now.ISOWeek());
+	fmt.Println("DAY 		: ", now.Day());
+	fmt.Println("HOUR 		: ", now.Hour());
+	fmt.Println("MINUTE 	: ", now.Minute());
+	fmt.Println("SECOND 	: ", now.Second());
+	fmt.Println("Nanosecond : ", now.Nanosecond());
+	fmt.Println("LOCAL 		: ", now.Local());
+	fmt.Println("LOCATION 	: ", now.Location());
+	// fmt.Println("ZONE 		: ", now.Zone());
+	fmt.Println("IS ZERO 	: ", now.IsZero());
+	fmt.Println("UTC 		: ", now.UTC());
+	fmt.Println("Unix 		: ", now.Unix());
+	fmt.Println("UNIXNANO 	: ", now.UnixNano());
+	fmt.Println("STRING 	: ", now.String());
+
+	// A.40.3. Parsing dari string ke time.Time
+	fmt.Println("# - A.40.3. Parsing dari string ke time.Time");
+	var layoutFormat, value string
+	var date time.Time
+
+	layoutFormat = "2006-01-02 15:04:05"
+	value = "2015-09-02 08:04:00"
+	date, _ = time.Parse(layoutFormat, value)
+	fmt.Println(value, "\t->", date.String())
+	// 2015-09-02 08:04:00 +0000 UTC
+
+	layoutFormat = "02/01/2006 MST"
+	value = "02/09/2015 WIB"
+	date, _ = time.Parse(layoutFormat, value)
+	fmt.Println(value, "\t\t->", date.String())
+
+	// A.40.4. Predefined Layout Format Untuk Keperluan Parsing Time
+	fmt.Println("# - A.40.4. Predefined Layout Format Untuk Keperluan Parsing Time");
+	fmt.Println("# - A.40.5. Format dari time.Time ke string");
+	var dates, _ = time.Parse(time.RFC822, "02 Sep 15 08:00 WIB")
+	fmt.Println(dates.String())
+	
+	var d, _ = time.Parse(time.RFC822, "02 Jan 22 08:00 WIB");
+	fmt.Println(d)
+
+	var dateS1 = dates.Format("Monday 02, January 2006 15:04 MST");
+	fmt.Println("dateS1 :", dateS1)
+
+	var dateS2 = date.Format(time.RFC3339)
+	fmt.Println("dateS2 :", dateS2)
+
+	// A.40.6. Handle Error Parsing time.Time
+	fmt.Println("# - A.40.6. Handle Error Parsing time.Time");
+	var exampleDateSix, err = time.Parse("06 Jan 15", "02 Sep 15 08:00 WIB")
+	if err != nil {
+		fmt.Println("error", err.Error())
+		return
+	}
+	fmt.Println(exampleDateSix)
 }

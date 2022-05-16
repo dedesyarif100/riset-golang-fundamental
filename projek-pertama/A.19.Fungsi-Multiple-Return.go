@@ -7,11 +7,11 @@ import (
 
 func main() {
 	// A.19.1 Penerapan Fungsi Multiple Return
-	fmt.Println("A.19.1 Penerapan Fungsi Multiple Return");
-	var diameter float64 = 15
-    var area, circumference = calculate(diameter)
-    fmt.Printf("luas lingkaran\t\t: %.2f \n", area)
-    fmt.Printf("keliling lingkaran\t: %.2f \n", circumference)
+	fmt.Println("# - A.19.1 Penerapan Fungsi Multiple Return");
+		var diameter float64 = 15
+		var area, circumference = calculate(diameter)
+		fmt.Printf("luas lingkaran\t\t: %.2f \n", area)
+		fmt.Printf("keliling lingkaran\t: %.2f \n", circumference)
 }
 
 // A.19.1 Penerapan Fungsi Multiple Return
@@ -32,6 +32,6 @@ func calculate(d float64) (area float64, circumference float64) {
 	circumference = math.Pi * d
 	fmt.Println(area)
 	fmt.Println(circumference)
-	math.
+	// math.
 	return
 }

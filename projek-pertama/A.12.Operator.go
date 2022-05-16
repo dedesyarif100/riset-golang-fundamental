@@ -4,27 +4,24 @@ import "fmt"
 
 func main() {
 	// A.12.1. Operator Aritmatika
-	fmt.Println("A.12.1. Operator Aritmatika");
-	var value1 = (((2 + 6) % 3) * 4 - 2) / 3
-	fmt.Println(value1)
+	fmt.Println("# - A.12.1. Operator Aritmatika");
+		var value1 = (((2 + 6) % 3) * 4 - 2) / 3;
+		fmt.Println(value1);
 
 	// A.12.2. Operator Perbandingan
-	fmt.Println("A.12.2. Operator Perbandingan");
-	var value2 = (((2 + 6) % 3) * 4 - 2) / 3
-	var isEqual = (value2 == 2)
-	fmt.Printf("nilai %d (%t) \n", value2, isEqual)
+	fmt.Println("# - A.12.2. Operator Perbandingan");
+		var value2 = (((2 + 6) % 3) * 4 - 2) / 3;
+		var isEqual = (value2 == 2);
+		fmt.Printf("nilai %d (%t) \n", value2, isEqual);
 
 	// A.12.3. Operator Logika
-	fmt.Println("A.12.3. Operator Logika");
-	var left = false
-	var right = true
+	fmt.Println("# - A.12.3. Operator Logika");
+		var resultThreeSecOne = false && true;
+		fmt.Printf("false && true : \t(%t) \n", resultThreeSecOne);
 
-	var leftAndRight = left && right
-	fmt.Printf("left && right \t(%t) \n", leftAndRight)
+		var resultThreeSecTwo = false || true;
+		fmt.Printf("false || true : \t(%t) \n", resultThreeSecTwo);
 
-	var leftOrRight = left || right
-	fmt.Printf("left || right \t(%t) \n", leftOrRight)
-
-	var leftReverse = !left
-	fmt.Printf("!left \t\t(%t) \n", leftReverse)
+		var resultThreeSecThree = !false;
+		fmt.Printf("!false	: \t\t(%t) \n", resultThreeSecThree);
 }

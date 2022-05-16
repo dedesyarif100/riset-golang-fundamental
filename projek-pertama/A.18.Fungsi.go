@@ -9,27 +9,27 @@ import (
 
 func main() {
 	// A.18.1. Penerapan Fungsi
-	fmt.Println("A.18.1. Penerapan Fungsi");
-	var names = []string{"DEDE", "HEND"}
-	exampleOne("RIAN", names)
+	fmt.Println("# - A.18.1. Penerapan Fungsi");
+		var names = []string{"DEDE", "HEND"}
+		exampleOne("RIAN", names)
 
 	// A.18.2. Fungsi Dengan Return Value / Nilai Balik
-	fmt.Println("A.18.2. Fungsi Dengan Return Value / Nilai Balik");
-    rand.Seed(time.Now().Unix())
-	var randomValue int
+	fmt.Println("# - A.18.2. Fungsi Dengan Return Value / Nilai Balik");
+		rand.Seed(time.Now().Unix())
+		var randomValue int
 
-	randomValue = exampleTwo(2, 10)
-    fmt.Println("random number:", randomValue)
-	randomValue = exampleTwo(2, 10)
-    fmt.Println("random number:", randomValue)
-	randomValue = exampleTwo(2, 10)
-    fmt.Println("random number:", randomValue)
+		randomValue = exampleTwo(2, 10)
+		fmt.Println("random number:", randomValue)
+		randomValue = exampleTwo(2, 10)
+		fmt.Println("random number:", randomValue)
+		randomValue = exampleTwo(2, 10)
+		fmt.Println("random number:", randomValue)
 
 	// A.18.6. Penggunaan Keyword return Untuk Menghentikan Proses Dalam Fungsi
-	fmt.Println("A.18.6. Penggunaan Keyword return Untuk Menghentikan Proses Dalam Fungsi");
-	exampleSix(10, 2)
-	exampleSix(4, 0)
-	exampleSix(8, -4)
+	fmt.Println("# - A.18.6. Penggunaan Keyword return Untuk Menghentikan Proses Dalam Fungsi");
+		exampleSix(10, 2)
+		exampleSix(4, 0)
+		exampleSix(8, -4)
 }
 
 // A.18.1. Penerapan Fungsi

@@ -32,7 +32,7 @@ func users(w http.ResponseWriter, r *http.Request) {
 
     if r.Method == "GET" {
         var result, err = json.Marshal(data);
-		fmt.Println(json.Marshal(data));
+		// fmt.Println(json.Marshal(data));
 
         if err != nil {
             http.Error(w, err.Error(), http.StatusInternalServerError);
@@ -51,7 +51,7 @@ func user(w http.ResponseWriter, r *http.Request) {
 	// fmt.Println(r);
 
     if r.Method == "GET" {
-        var id = r.FormValue("E001");
+        var id = r.FormValue("ID");
         var result []byte;
         var err error;
 		fmt.Println(id);

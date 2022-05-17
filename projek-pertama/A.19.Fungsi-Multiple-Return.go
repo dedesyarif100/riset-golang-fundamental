@@ -32,6 +32,5 @@ func calculate(d float64) (area float64, circumference float64) {
 	circumference = math.Pi * d
 	fmt.Println(area)
 	fmt.Println(circumference)
-	// math.
 	return
 }

@@ -3,11 +3,11 @@ package library
 import "fmt"
 
 // A.26.3. Penggunaan Package, Import, Dan Hak Akses Exported dan Unexported
-func SayHello(name string) {
+func ApelMalang(name string) {
     fmt.Println("hello")
-	introduce(name)
+	apelHijau(name)
 }
-func introduce(name string) {
+func apelHijau(name string) {
     fmt.Println("nama saya", name)
 }
 

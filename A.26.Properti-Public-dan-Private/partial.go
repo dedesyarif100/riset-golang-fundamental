@@ -2,6 +2,6 @@ package main
 
 import "fmt"
 
-func sayHello(name string) {
+func ExampleSeven(name string) {
     fmt.Println("halo", name)
 }

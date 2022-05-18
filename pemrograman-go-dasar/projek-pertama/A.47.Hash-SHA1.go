@@ -17,6 +17,7 @@ func main() {
 
 		fmt.Println(encryptedString)
 		// f4ebfd7a42d9a43a536e2bed9ee4974abf8f8dc8
+		fmt.Println();
 
 	// A.47.2. Metode Salting Pada Hash SHA1
 	fmt.Println("# - A.47.2. Metode Salting Pada Hash SHA1");

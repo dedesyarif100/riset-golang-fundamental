@@ -8,35 +8,38 @@ import (
 func main() {
 	// A.36.1. Penerapan keyword defer
 	fmt.Println("# - A.36.1. Penerapan keyword defer");
-    defer fmt.Println("INI DIJALANKAN PALING AKHIR");
-    fmt.Println("selamat datang");
+        defer fmt.Println("INI DIJALANKAN PALING AKHIR");
+        fmt.Println("selamat datang");
 
-    orderSomeFood("pizza");
-    orderSomeFood("burger");
+        orderSomeFood("pizza");
+        orderSomeFood("burger");
+        fmt.Println();
 
 	// A.36.2. Kombinasi defer dan IIFE
 	fmt.Println("# - A.36.2. Kombinasi defer dan IIFE");
-    numberTwoSecOne := 3;
-    if numberTwoSecOne == 3 {
-        fmt.Println("halo 1");
-        defer fmt.Println("halo 3 -----------------");
-    }
-    fmt.Println("halo 2");
-	// ----------------------------------------------------
-	numberTwoSecTwo := 3;
-    if numberTwoSecTwo == 3 {
-        fmt.Println("hai 1");
-        func() {
-			defer fmt.Println("hai 3 -----------------");
-        }();
-    }
-    fmt.Println("hai 2");
+        numberTwoSecOne := 3;
+        if numberTwoSecOne == 3 {
+            fmt.Println("halo 1");
+            defer fmt.Println("halo 3 -----------------");
+        }
+        fmt.Println("halo 2");
+        // ----------------------------------------------------
+        numberTwoSecTwo := 3;
+        if numberTwoSecTwo == 3 {
+            fmt.Println("hai 1");
+            func() {
+                defer fmt.Println("hai 3 -----------------");
+            }();
+        }
+        fmt.Println("hai 2");
+        fmt.Println();
 
 	// A.36.3. Penerapan Fungsi os.Exit();
-	fmt.Println("# - A.36.3. Penerapan Fungsi os.Exit()");
-    defer fmt.Println("halo");
-    os.Exit(1);
-    fmt.Println("DEDE");
+    fmt.Println("# - A.36.3. Penerapan Fungsi os.Exit()");
+        defer fmt.Println("halo");
+        os.Exit(1);
+        fmt.Println("DEDE");
+        fmt.Println();
 }
 
 // A.36.1. Penerapan keyword defer

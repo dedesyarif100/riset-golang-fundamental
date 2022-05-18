@@ -16,6 +16,7 @@ func main() {
 		var args = argsRaw[1:]
 		fmt.Printf("-> %#v\n", args)
 		// -> []string{"banana", "potatao", "ice cream"}
+		fmt.Println();
 
 	// A.48.2. Penggunaan Flag
 	fmt.Println("# - A.48.2. Penggunaan Flag");
@@ -28,6 +29,7 @@ func main() {
 
 		// var dataName = flag.String("name", "anonymous", "type your name")
 		// fmt.Println(*dataName)
+		fmt.Println();
 
 	// A.48.3. Deklarasi Flag Dengan Cara Passing Reference Variabel Penampung Data
 	fmt.Println("# - A.48.3. Deklarasi Flag Dengan Cara Passing Reference Variabel Penampung Data");

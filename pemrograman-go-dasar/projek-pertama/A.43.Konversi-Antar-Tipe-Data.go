@@ -16,12 +16,14 @@ func main() {
 		if errExOneSecOne == nil {
 			fmt.Println(numExOneSecOne) // 124
 		}
+		fmt.Println();
 
 		// • Fungsi strconv.Itoa()
 		fmt.Println("• Fungsi strconv.Itoa()");
 		var numExOneSecTwo = 124
 		var strExOneSecTwo = strconv.Itoa(numExOneSecTwo)
 		fmt.Println(strExOneSecTwo) // "124"
+		fmt.Println();
 
 		// • Fungsi strconv.ParseInt()
 		fmt.Println("• Fungsi strconv.ParseInt()");
@@ -35,12 +37,14 @@ func main() {
 		if err == nil {
 			fmt.Println(num) // 10
 		}
+		fmt.Println();
 
 		// • Fungsi strconv.FormatInt()
 		fmt.Println("• Fungsi strconv.FormatInt()");
 		var numExOneSecFour = int64(24)
 		var strExOneSecFour = strconv.FormatInt(numExOneSecFour, 8)
 		fmt.Println(strExOneSecFour) // 30
+		fmt.Println();
 
 		// • Fungsi strconv.ParseFloat()
 		fmt.Println("• Fungsi strconv.ParseFloat()");
@@ -49,12 +53,14 @@ func main() {
 		if errExOneSecFive == nil {
 			fmt.Println(numExOneSecFive) // 24.1200008392334
 		}
+		fmt.Println();
 
 		// • Fungsi strconv.FormatFloat()
 		fmt.Println("• Fungsi strconv.FormatFloat()");
 		var numExOneSecSix = float64(24.12)
 		var strExOneSecSix = strconv.FormatFloat(numExOneSecSix, 'f', 6, 64)
 		fmt.Println(strExOneSecSix) // 24.120000
+		fmt.Println();
 
 		// • Fungsi strconv.ParseBool()
 		fmt.Println("• Fungsi strconv.ParseBool()");
@@ -63,12 +69,14 @@ func main() {
 		if errExOneSecSeven == nil {
 			fmt.Println(bulExOneSecSeven) // true
 		}
+		fmt.Println();
 
 		// • Fungsi strconv.FormatBool()
 		fmt.Println("• Fungsi strconv.FormatBool()");
 		var bulExOneSecEight = true
 		var strExOneSecEight = strconv.FormatBool(bulExOneSecEight)
 		fmt.Println(strExOneSecEight) // true
+		fmt.Println();
 
 	// A.43.2. Konversi Data Menggunakan Teknik Casting
 	fmt.Println("# - A.43.2. Konversi Data Menggunakan Teknik Casting");
@@ -76,6 +84,7 @@ func main() {
 		fmt.Println(castingOne); // 24
 		var castingTwo int32 = int32(24.00);
 		fmt.Println(castingTwo); // 24
+		fmt.Println();
 
 	// A.43.3. Casting string ↔ byte
 	fmt.Println("# - A.43.3. Casting string ↔ byte");
@@ -94,6 +103,7 @@ func main() {
 
 		var d string = string(104)
 		fmt.Println(d) // h
+		fmt.Println();
 
 	// A.43.4. Type Assertions Pada Interface Kosong (interface{})
 	fmt.Println("# - A.43.4. Type Assertions Pada Interface Kosong (interface{})");

@@ -10,10 +10,12 @@ func main() {
 	fmt.Println("# - A.46.1. Penerapan Fungsi EncodeToString() & DecodeString()");
 		var dataExOne = "john wick"
 		var encodedStringExOne = base64.StdEncoding.EncodeToString([]byte(dataExOne))
-		fmt.Println("encoded:", encodedStringExOne)
+		fmt.Println("ENCODED:", encodedStringExOne)
+
 		var decodedByteExOne, _ = base64.StdEncoding.DecodeString(encodedStringExOne)
 		var decodedStringExOne = string(decodedByteExOne)
-		fmt.Println("decoded:", decodedStringExOne)
+		fmt.Println("DECODED:", decodedStringExOne)
+		fmt.Println();
 
 	// A.46.2. Penerapan Fungsi Encode() & Decode()
 	fmt.Println("# - A.46.2. Penerapan Fungsi Encode() & Decode()");
@@ -30,6 +32,7 @@ func main() {
 		}
 		var decodedStringExTwo = string(encodedExTwo)
 		fmt.Println(decodedStringExTwo)
+		fmt.Println();
 
 	// A.46.3. Encode & Decode Data URL
 	fmt.Println("# - A.46.3. Encode & Decode Data URL");

@@ -12,12 +12,13 @@ func main() {
         }
 
         var t, err = template.ParseFiles("template.html")
-        fmt.Println(template.ParseFiles("template.html"));
+        // fmt.Println(template.ParseFiles("template.html"));
         if err != nil {
             fmt.Println(err.Error())
             return
         }
 
+        // fmt.Println(r);
         t.Execute(w, data)
     })
 

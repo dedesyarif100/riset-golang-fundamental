@@ -23,9 +23,13 @@ var ExampleSix = struct {
 	Grade int
 }{}
 
+var ValA = "VALUE A";
+
 func init() {
 	ExampleSix.Name = "DEDE SYARIFUDIN"
 	ExampleSix.Grade = 2
-
     fmt.Println("--> library/library.go imported")
+	fmt.Println("NAME :",ExampleSix.Name);
+	fmt.Println("GRADE :",ExampleSix.Grade);
+	fmt.Println();
 }

@@ -34,7 +34,7 @@ func (k *kubus) volume() float64 {
 }
 
 func main() {
-    var bangunRuang calculate = &kubus{4}
+    var bangunRuang calculate = &kubus{6}
     fmt.Println("===== kubus")
     fmt.Println("luas      :", bangunRuang.luas())
     fmt.Println("keliling  :", bangunRuang.keliling())

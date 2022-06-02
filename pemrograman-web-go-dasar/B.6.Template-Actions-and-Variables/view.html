@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <title>Learning html/template Actions</title>
+</head>
+
+<body>
+    <table>
+        <!-- B.6.2. Pipeline Output & Komentar -->
+        <tr>
+            {{/* example how to use actions */}}
+            <td>{{"Name"}}</td>
+            <td>: {{.Name}}</td>
+        </tr>
+        <!-- B.6.3. Membuat & Menampilkan Isi Variabel -->
+        <tr>
+            <td>Gender</td>
+            {{$gender := .Gender}}
+            <td style="text-transform: capitalize;">:
+                {{$gender}}
+            </td>
+        </tr>
+        <!-- B.6.4. Perulangan -->
+        <tr>
+            <td>Hobbies</td>
+            <td>:
+                {{range $index, $elem := .Hobbies}}
+                {{$elem}},
+                {{end}}
+            </td>
+        </tr>
+        <!-- B.6.5. Pengaksesan Property Variabel Objek -->
+        <tr>
+            <td>Affiliation</td>
+            <td>: {{.Info.Affiliation}} ({{.Info.GetAffiliationDetailInfo}})</td>
+        </tr>
+        <!-- B.6.6. Penggunaan Keyword with Untuk Mengganti Scope Variabel Pada Suatu Blok -->
+        {{with .Info}}
+            <tr>
+                <td>Address</td>
+                <td>: {{.Address}}</td>
+            </tr>
+        {{end}}
+        <!-- B.6.7. Seleksi Kondisi -->
+        {{if eq .Name "Bruce Wayne"}}
+            <tr>
+                <td colspan="2" style="font-weight: bold;">
+                    I'm the Batman!
+                </td>
+            </tr>
+        {{end}}
+
+        {{if eq .IsTrue true}}
+            <strong>TRUE</strong>
+        {{else}}
+            <strong>FALSE</strong>
+        {{end}}
+
+        {{if eq .Abjad "A"}}
+            <strong>A</strong>
+        {{else if ne .Abjad "A"}}
+            <strong>NOT A</strong>
+        {{end}}
+    </table>
+</body>
+
+</html>

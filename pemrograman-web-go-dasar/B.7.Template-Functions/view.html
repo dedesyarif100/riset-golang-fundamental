@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title>Learning html/template Functions</title>
+</head>
+
+<body>
+    <!-- B.7.2. Fungsi Escape String -->
+        <p>
+            {{html "<h2>Hello</h2>"}}
+        </p>
+
+    <!-- B.7.3. Fungsi Operator Perbandingan -->
+        {{$value := 61}}
+        <!-- {{$value}} -->
+        {{if gt $value 60}}
+            LULUS
+        {{else}}
+            TIDAK LULUS
+        {{end}}
+
+        {{if eq .Name "Bruce Wayne"}}
+            <p>I'm the Batman!</p>
+        {{else if ne .Name "Clark Kent"}}
+            <p>I'm neither Batman or Superman</p>
+        {{end}}
+
+        {{$ValA := 12}}
+        {{$ValB := 20}}
+        <p>
+            {{if le $ValA 12}}
+                LULUS
+            {{else}}
+                TIDAK LULUS
+            {{end}}
+        </p>
+
+        <p>
+            {{if gt $ValA 12}}
+                LULUS
+            {{else}}
+                TIDAK LULUS
+            {{end}}
+        </p>
+
+    <!-- B.7.4. Pemanggilan Method -->
+        <p>
+            {{.SayHello "Gotham citizen" "You are our hero!"}}
+        </p>
+
+    <!-- B.7.5. Fungsi String -->
+        <p>
+            {{printf "%s because I'm %s" "You know why?" "Batman!"}}
+        </p>
+    
+    <!-- B.7.6. Fungsi len dan index -->
+        <p>
+            Batman have many friends. <strong>{{len .Friends}}</strong> of them are:
+            <strong>
+                {{index .Friends 0}},
+                {{index .Friends 1}},
+                {{index .Friends 2}}
+            </strong>
+        </p>
+
+    <!-- B.7.7. Fungsi Operator Logika -->
+        {{$cond1 := false}}
+        {{$cond2 := false}}
+
+        {{if and $cond1 $cond2}}
+            <strong>TRUE TRUE</strong>
+        {{else if or $cond1 $cond2}}
+            <strong>TRUE FALSE</strong>
+        {{else}}
+            <strong>FALSE FALSE</strong>
+        {{end}}
+</body>
+</html>

@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-    "strings"
-    // "reflect"
+	"strings"
+	// "reflect"
 )
 
 func main() {
@@ -11,12 +11,12 @@ func main() {
     fmt.Println("# - A.28.1. Penggunaan interface{}");
         var secret interface{};
         secret = "ethan hunt";
-        fmt.Println(secret);
+        fmt.Println("SECRET :", secret);
         secret = []string{"apple", "manggo", "banana"};
         // fmt.Println(reflect.TypeOf(secret));
-        fmt.Println(secret);
+        fmt.Println("SECRET :", secret);
         secret = 12.4;
-        fmt.Println(secret);
+        fmt.Println("SECRET :", secret);
         fmt.Println("----------------------------------------");
         var data map[string]interface{};
         data = map[string]interface{} {
@@ -24,7 +24,7 @@ func main() {
             "grade"     : 2,
             "name"      : "ethan hunt",
         };
-        fmt.Println(data);
+        fmt.Println("DATA :", data);
         fmt.Println();
 
     // A.28.2. Type Alias Any
@@ -32,11 +32,11 @@ func main() {
         // TYPE ANY, HANYA BISA DIGUNAKAN PADA GOLANG VERSI v1.18
         var exampleTwo map[string]any
         exampleTwo = map[string]any{
-            "name":      "ethan hunt",
-            "grade":     2,
-            "breakfast": []string{"apple", "manggo", "banana"},
+            "name"      : "ethan hunt",
+            "grade"     : 2,
+            "breakfast" : []string{"apple", "manggo", "banana"},
         }
-        fmt.Println(exampleTwo);
+        fmt.Println("DATA :", exampleTwo);
         fmt.Println();
 
     // A.28.3. Casting Variabel Interface Kosong
@@ -45,15 +45,15 @@ func main() {
 
         exampleThree = 2;
         var number = exampleThree.(int) * 10;
-        fmt.Println(exampleThree, "multiplied by 10 is :", number);
+        fmt.Println("DATA       :", exampleThree, "multiplied by 10 is :", number);
 
         exampleThree = []string{"apple", "manggo", "banana"};
         var gruits = strings.Join(exampleThree.([]string), ", ");
-        fmt.Println(gruits, "is my favorite fruits");
+        fmt.Println("DATA       :", gruits, "is my favorite fruits");
 
         exampleThree = "DEDE SYARIFUDIN";
         var result = exampleThree.(string) +" HIDAYAT";
-        fmt.Println(result);
+        fmt.Println("RESULT     :", result);
         fmt.Println();
 
     // A.28.4. Casting Variabel Interface Kosong Ke Objek Pointer
@@ -65,8 +65,8 @@ func main() {
         var exampleFour interface{} = &structExampleFour{name: "wick", age: 27};
         var name = exampleFour.(*structExampleFour).name;
         age := exampleFour.(*structExampleFour).age;
-        fmt.Println("NAMA : "+name);
-        fmt.Println("AGE  : ",age);
+        fmt.Println("NAMA       :",name);
+        fmt.Println("AGE        :",age);
         fmt.Println();
 
     // A.28.5. Kombinasi Slice, map, dan interface{}

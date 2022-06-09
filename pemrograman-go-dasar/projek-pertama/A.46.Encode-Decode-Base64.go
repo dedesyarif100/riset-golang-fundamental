@@ -43,4 +43,5 @@ func main() {
 		var decodedByteExThree, _ = base64.URLEncoding.DecodeString(encodedStringExThree)
 		var decodedStringExThree = string(decodedByteExThree)
 		fmt.Println(decodedStringExThree)
+		fmt.Println();
 }

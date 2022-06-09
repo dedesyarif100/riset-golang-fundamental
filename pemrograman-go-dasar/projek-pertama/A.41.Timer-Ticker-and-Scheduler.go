@@ -120,14 +120,8 @@ func main() {
         go runWatcher(timeout, chSeven);
 
         var input string;
-        fmt.Print("what is 725/25 ? ");
-        fmt.Scan(&input);
-
-        if input == "29" {
-            fmt.Println("the answer is right!");
-        } else {
-            fmt.Println("the answer is wrong!");
-        }
+        fmt.Println("what is 725/25 ? ");
+        fmt.Scanln(&input);
 }
 
 // A.41.7. Kombinasi Timer & Goroutine

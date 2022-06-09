@@ -56,12 +56,12 @@ func main() {
 
 	// A.37.4. Penggunaan recover
 	fmt.Println("# - A.37.4. Penggunaan recover");
-        defer catch();
 
         var name string;
         fmt.Print("Type your name: ");
         fmt.Scanln(&name);
 
+        defer catch();
         if err, valid := validate(name); !valid {
             panic(err.Error());
             fmt.Println("end");

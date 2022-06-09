@@ -21,6 +21,7 @@ func main() {
 		print(5, "halo");
 
 		var input string;
+		// fmt.Println("INPUT		:",input)
 		fmt.Scanln(&input);
 
 	// A.30.1.1. Penggunaan Fungsi runtime.GOMAXPROCS();

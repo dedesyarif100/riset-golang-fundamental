@@ -5,13 +5,6 @@ import (
     "runtime"
 )
 
-var chanExampleThree = make(chan int);
-var exampleThree = func(val int) {
-    // var number = fmt.Sprintln(val);
-    // var number = fmt.Printf("hello %o", val);
-    chanExampleThree <-val;
-}
-
 func main() {
 	// A.31.1. Penerapan Channel
 	fmt.Println("# - A.31.1. Penerapan Channel");
@@ -44,7 +37,8 @@ func main() {
 	fmt.Println("# - A.31.2. Channel Sebagai Tipe Data Parameter");
         var messagesTwo = make(chan any);
 
-        for _, each := range []string{"wick", "hunt", "bourne"} {
+        words := []string{"wick", "hunt", "bourne", "dede", "tes"}
+        for _, each := range words {
             go func(who string) {
                 var data = fmt.Sprintf("hello %s", who);
                 messagesTwo <-data;
@@ -52,8 +46,9 @@ func main() {
         }
         // fmt.Println(messagesTwo);
 
+        // fmt.Println()
         // EKSEKUSI BERSIFAT SYNCRONOUS
-        for i := 0; i < 3; i++ {
+        for i := 0; i < len(words); i++ {
             printMessage(messagesTwo);
         }
         // EKSEKUSI BERSIFAT SYNCRONOUS
@@ -61,6 +56,13 @@ func main() {
 
     // EXAMPLE THREE
     fmt.Println("# - EXAMPLE THREE");
+        var chanExampleThree = make(chan int);
+        var exampleThree = func(val int) {
+            // var number = fmt.Sprintln(val);
+            // var number = fmt.Printf("hello %o", val);
+            chanExampleThree <-val;
+        }
+
         go exampleThree(1);
         go exampleThree(2);
         go exampleThree(3);
@@ -74,6 +76,26 @@ func main() {
         val3 := <-chanExampleThree;
         fmt.Println(val3);
         fmt.Println();
+
+    fmt.Println("# - EXAMPLE FOUR");
+		ChanExampleFour := make(chan any)
+		ExampleFour := func(val any) {
+			ChanExampleFour <-val
+		}
+
+		for j := 0; j <= 10; j++ {
+			go ExampleFour(j)
+		}
+
+		var num []any
+		for k := 0; k <= 10; k++ {
+			num = append(num, <-ChanExampleFour)
+		}
+
+        for n := 0; n < len(num); n++ {
+			fmt.Printf("DATA : %d\n", num[n])
+		}
+		println()
 }
 
 func printMessage(what chan any) {

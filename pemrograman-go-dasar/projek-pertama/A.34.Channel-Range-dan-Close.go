@@ -30,6 +30,7 @@ func sendMessage(ch chan<- string) {
     close(ch);
 }
 func printMessage(ch <-chan string) {
+    fmt.Println("PRINT MESSAGE :")
     for message := range ch {
         fmt.Println(message);
     }
@@ -43,6 +44,7 @@ func sendDataExTwo(channel chan<- int, count int) {
     close(channel);
 }
 func receiveDataExTwo(channel <-chan int) {
+    fmt.Println("RECEIVE DATA EX TWO :")
     for msg := range channel {
         fmt.Print(msg," | ");
     }

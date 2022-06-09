@@ -11,7 +11,7 @@ import (
     "time"
 )
 
-var tempPathThree = filepath.Join(os.Getenv("TEMP"), "chapter-A.59-pipeline-temp")
+var tempPathThree = filepath.Join(os.Getenv("TEMP"), "FILE TEMPORARY")
 
 type FileInfo struct {
     FilePath  string // file location
@@ -26,13 +26,17 @@ func main() {
 
     // pipeline 1: loop all files and read it
     chanFileContent := readFiles()
+    fmt.Println("CHAN FILE CONTENT :",chanFileContent)
+    fmt.Println("------------------------------------")
 
     // ...
 	// pipeline 2: calculate md5sum
     chanFileSum1 := getSum(chanFileContent)
     chanFileSum2 := getSum(chanFileContent)
     chanFileSum3 := getSum(chanFileContent)
+    fmt.Println("------------------------------------")
     chanFileSum := mergeChanFileInfo(chanFileSum1, chanFileSum2, chanFileSum3)
+    fmt.Println("------------------------------------")
 
     // ...
 	// pipeline 3: rename files
@@ -40,7 +44,9 @@ func main() {
     chanRename2 := rename(chanFileSum)
     chanRename3 := rename(chanFileSum)
     chanRename4 := rename(chanFileSum)
+    fmt.Println("------------------------------------")
     chanRename := mergeChanFileInfo(chanRename1, chanRename2, chanRename3, chanRename4)
+    fmt.Println("------------------------------------")
 
     // ...
 	// print output
@@ -52,6 +58,7 @@ func main() {
         }
         counterTotal++
     }
+    fmt.Println("------------------------------------")
 
     log.Printf("%d/%d files renamed", counterRenamed, counterTotal)
 
@@ -63,7 +70,9 @@ func readFiles() <-chan FileInfo {
     chanOut := make(chan FileInfo)
 
     go func() {
+        fmt.Println("GO FUNC")
         err := filepath.Walk(tempPathThree, func(path string, info os.FileInfo, err error) error {
+            fmt.Println(path)
 
             // if there is an error, return immediatelly
             if err != nil {
@@ -93,6 +102,7 @@ func readFiles() <-chan FileInfo {
 
         close(chanOut)
     }()
+    fmt.Println("READ FILES")
 
     return chanOut
 }
@@ -101,10 +111,12 @@ func getSum(chanIn <-chan FileInfo) <-chan FileInfo {
     chanOut := make(chan FileInfo)
 
     go func() {
+        fmt.Println("CHAN IN :", chanIn)
         for fileInfo := range chanIn {
             fileInfo.Sum = fmt.Sprintf("%x", md5.Sum(fileInfo.Content))
             chanOut <- fileInfo
         }
+        fmt.Println("CHAN OUT func getSum() :", chanOut)
         close(chanOut)
     }()
 
@@ -114,6 +126,8 @@ func getSum(chanIn <-chan FileInfo) <-chan FileInfo {
 func mergeChanFileInfo(chanInMany ...<-chan FileInfo) <-chan FileInfo {
     wg := new(sync.WaitGroup)
     chanOut := make(chan FileInfo)
+    fmt.Println("CHAN IN MANY :", chanInMany)
+    // fmt.Println("WG :", wg)
 
     wg.Add(len(chanInMany))
     for _, eachChan := range chanInMany {
@@ -121,6 +135,7 @@ func mergeChanFileInfo(chanInMany ...<-chan FileInfo) <-chan FileInfo {
             for eachChanData := range eachChan {
                 chanOut <- eachChanData
             }
+            fmt.Println("CHAN OUT func mergeChanFileInfo() :", chanOut)
             wg.Done()
         }(eachChan)
     }

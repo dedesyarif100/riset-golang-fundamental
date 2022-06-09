@@ -96,7 +96,8 @@ func main() {
 						{"john wick", 27, "SOFTWARE ENGINEER", "GOLANG"}, 
 						{"ethan hunt", 32, "BACKEND ENGINEER", "LARAVEL"},
 					};
-		fmt.Println(object);
+		// fmt.Println( reflect.TypeOf(object) );
+		fmt.Println( object )
 		fmt.Println();
 
 		var jsonDataExFour, errExFour = json.Marshal(object);
@@ -105,7 +106,8 @@ func main() {
 			return;
 		}
 
-		// fmt.Println( json.Marshal(object) );
 		var jsonStringExFour = string(jsonDataExFour);
 		fmt.Println( jsonStringExFour );
+		// fmt.Println( reflect.TypeOf(jsonStringExFour) );
+		fmt.Println();
 }

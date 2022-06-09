@@ -22,19 +22,19 @@ func main() {
 }
 
 
-func sendData(ch chan<- int) {
+func sendData(channel chan<- int) {
 	fmt.Println( time.Duration( rand.Int()%10+1 ) * time.Second );
 	// fmt.Println( time.Sleep( time.Duration( rand.Int()%10+1 ) * time.Second ) );
     for i := 0; true; i++ {
-        ch <- i;
+        channel <- i;
         time.Sleep( time.Duration( rand.Int()%10+1 ) * time.Second );
     }
 }
-func retreiveData(ch <-chan int) {
+func retreiveData(channel <-chan int) {
     loop:
     for {
         select {
-			case data := <-ch:
+			case data := <-channel:
 				// fmt.Println(data);
 				fmt.Print(`receive data "`, data, `"`, "\n");
 			case <-time.After(time.Second * 5):

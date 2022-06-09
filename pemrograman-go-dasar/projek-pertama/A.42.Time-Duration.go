@@ -8,7 +8,11 @@ import (
 func main() {
 	// A.42.1. Praktek
 	fmt.Println("# - A.42.1. Praktek");
+		fmt.Println();
+
 	fmt.Println("# - A.42.2. Kalkulasi Durasi Menggunakan time.Since()");
+		fmt.Println();
+	
 	fmt.Println("# - A.42.3. Method time.Duration");
 		start := time.Now();
 		time.Sleep(3 * time.Second);
@@ -26,7 +30,7 @@ func main() {
 
 		durationFour := t2.Sub(t1);
 
-		fmt.Println("time elapsed in seconds 	:", durationFour.Seconds());
+		fmt.Println("time elapsed in seconds :", durationFour.Seconds());
 		fmt.Println("time elapsed in minutes	:", durationFour.Minutes());
 		fmt.Println("time elapsed in hours	:", durationFour.Hours());
 		fmt.Println();
@@ -42,4 +46,5 @@ func main() {
 		var n time.Duration = 5;
 		durationFive := n * time.Microsecond;
 		fmt.Println(durationFive);
+		fmt.Println();
 }

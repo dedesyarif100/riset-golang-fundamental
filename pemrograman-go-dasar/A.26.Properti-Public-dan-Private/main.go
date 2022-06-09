@@ -23,18 +23,20 @@ func main() {
 	
 	f.Println("# - A.26.6. Pemanfaatan Alias Ketika Import");
 		var s1 = Student{"ethan", 21};
-		f.Println("name ", s1.Name);
-		f.Println("grade", s1.Grade);
+		f.Println("NAME 	:", s1.Name);
+		f.Println("GRADE	:", s1.Grade);
 		f.Println();
 
 	// A.26.7. Mengakses Properti Dalam File Yang Package-nya Sama
 	f.Println("# - A.26.7. Mengakses Properti Dalam File Yang Package-nya Sama");
-    	exampleSeven("FEBBY SAILOLIN");
+		exampleSeven("FEBBY SAILOLIN");
 		f.Println();
 
 	// A.26.7.1. Fungsi init()
 	f.Println("# - A.26.7.1. Fungsi init()");
-		f.Printf("Name  : %s\n", ExampleSix.Name);
-		f.Printf("Grade : %d\n", ExampleSix.Grade);
-		f.Println("VALUE A :",ValA);
+		f.Printf("NAME  	: %s\n", ExampleSix.Name);
+		f.Printf("GRADE 	: %d\n", ExampleSix.Grade);
+		f.Println("VALUE A :", ValA);
+		f.Println("VALUE B :", valB);
+		f.Println();
 }

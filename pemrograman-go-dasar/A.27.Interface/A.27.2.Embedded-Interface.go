@@ -5,36 +5,37 @@ import (
 	"math"
 )
 
+
 // EMBEDED INTERFACE
-type hitung2d interface {
+type Hitung2d interface {
     luas() float64
     keliling() float64
 }
-type hitung3d interface {
+type Hitung3d interface {
     volume() float64
 }
-type calculate interface {
-    hitung2d
-    hitung3d
+type Calculate interface {
+    Hitung2d
+    Hitung3d
 }
 // EMBEDED INTERFACE
 
 
-type kubus struct {
+type Kubus struct {
     sisi float64
 }
-func (k *kubus) luas() float64 {
+func (k *Kubus) luas() float64 {
     return math.Pow(k.sisi, 2) * 6
 }
-func (k *kubus) keliling() float64 {
+func (k *Kubus) keliling() float64 {
     return k.sisi * 12
 }
-func (k *kubus) volume() float64 {
+func (k *Kubus) volume() float64 {
     return math.Pow(k.sisi, 3)
 }
 
 func main() {
-    var bangunRuang calculate = &kubus{6}
+    var bangunRuang Calculate = &Kubus{6}
     fmt.Println("===== kubus")
     fmt.Println("luas      :", bangunRuang.luas())
     fmt.Println("keliling  :", bangunRuang.keliling())

@@ -5,11 +5,27 @@ import (
 	"math"
 )
 
+
 // INTERFACE HITUNG
 type Hitung interface {
-    luas() float64
-    keliling() float64
+    luas()      float64
+    keliling()  float64
 }
+
+
+// STRUCT PERSEGI
+type Persegi struct {
+    sisi float64
+}
+func (p Persegi) luas() float64 {
+	// f.Println("CEK DATA : ", math.Pow(p.sisi, 2))
+    return math.Pow(p.sisi, 2)
+}
+func (p Persegi) keliling() float64 {
+	// f.Println("CEK DATA : ", p.sisi * 4)
+    return p.sisi * 4
+}
+
 
 // STRUCT LINGKARAN
 type Lingkaran struct {
@@ -26,18 +42,6 @@ func (l Lingkaran) keliling() float64 {
     return math.Pi * l.diameter
 }
 
-// STRUCT PERSEGI
-type Persegi struct {
-    sisi float64
-}
-func (p Persegi) luas() float64 {
-	// f.Println("CEK DATA : ", math.Pow(p.sisi, 2))
-    return math.Pow(p.sisi, 2)
-}
-func (p Persegi) keliling() float64 {
-	// f.Println("CEK DATA : ", p.sisi * 4)
-    return p.sisi * 4
-}
 
 func main() {
 	// A.27.1. Penerapan Interface
@@ -54,4 +58,5 @@ func main() {
         f.Println("luas      :", bangunDatar.luas())
         f.Println("keliling  :", bangunDatar.keliling())
         f.Println("jari-jari :", bangunDatar.(Lingkaran).jariJari())
+        f.Println();
 }

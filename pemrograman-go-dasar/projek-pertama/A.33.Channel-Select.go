@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-    "runtime"
+	// "reflect"
+	"runtime"
 )
 
 func main() {
@@ -14,28 +15,35 @@ func main() {
         fmt.Println("numbers :", numbers);
 
         var ch1 = make(chan float64);
-        go getAverage(numbers, ch1);
-
+        go GetAverage(numbers, ch1);
+        
         var ch2 = make(chan int);
-        go getMax(numbers, ch2);
+        go GetMax(numbers, ch2);
 
         var ch3 = make(chan int);
-        go getNumber(numbers, ch3);
+        go GetNumber(numbers, ch3);
+        
+        data := []any{ch1, ch2, ch3};
 
-        for i := 0; i < 3; i++ {
+        fmt.Println("LOOP ---------------------------------");
+        for i := 1; i <= len(data); i++ {
+            fmt.Println("START :", i)
             select {
-                case avg := <-ch1:
-                    fmt.Printf("Avg \t: %.2f \n", avg);
+                case average := <-ch1:
+                    fmt.Printf("AVERAGE \t: %.2f \n", average);
                 case max := <-ch2:
-                    fmt.Printf("Max \t: %d \n", max);
-                case val := <-ch3:
-                    fmt.Println("Val \t:", val);
+                    fmt.Printf("MAX \t\t: %d \n", max);
+                case number := <-ch3:
+                    fmt.Println("NUMBER \t\t:", number);
             }
+            fmt.Println("NEXT  :", i)
+            println()
         }
         println()
 }
 
-func getAverage(numbers []int, ch chan float64) {
+func GetAverage(numbers []int, ch chan float64) {
+    fmt.Println("GET AVERAGE \t:")
     var sum = 0;
     for _, e := range numbers {
         sum += e;
@@ -43,7 +51,8 @@ func getAverage(numbers []int, ch chan float64) {
     ch <- float64(sum) / float64(len(numbers));
 }
 
-func getMax(numbers []int, ch chan int) {
+func GetMax(numbers []int, ch chan int) {
+    fmt.Println("GET MAX \t:")
     var max = numbers[0];
     for _, e := range numbers {
         if max < e {
@@ -53,7 +62,8 @@ func getMax(numbers []int, ch chan int) {
     ch <- max;
 }
 
-func getNumber(numbers []int, ch chan int) {
-	val := numbers[0];
+func GetNumber(numbers []int, ch chan int) {
+    fmt.Println("GET NUMBER \t:")
+    val := numbers[0];
 	ch <- val;
 }

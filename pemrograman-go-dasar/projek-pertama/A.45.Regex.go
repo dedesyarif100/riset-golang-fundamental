@@ -22,6 +22,7 @@ func main() {
 		var res2 = regexExOne.FindAllString(textExOne, -1)
 		fmt.Printf("%#v \n", res2)
 		// []string{"banana", "burger", "soup"}
+		println()
 
 	// A.45.2. Method MatchString()
 	fmt.Println("# - A.45.2. Method MatchString()");
@@ -31,6 +32,7 @@ func main() {
 		var isMatch = regexExTwo.MatchString(textExTwo)
 		fmt.Println(isMatch)
 		// true
+		println()
 
 	// A.45.3. Method FindString()
 	fmt.Println("# - A.45.3. Method FindString()");
@@ -40,6 +42,7 @@ func main() {
 		var strExThree = regexExThree.FindString(textExThree)
 		fmt.Println(strExThree)
 		// "banana"
+		println()
 
 	// A.45.4. Method FindStringIndex()
 	fmt.Println("# - A.45.4. Method FindStringIndex()");
@@ -53,6 +56,7 @@ func main() {
 		var strExFour = textExFour[0:6]
 		fmt.Println(strExFour)
 		// "banana"
+		println()
 
 	// A.45.5. Method FindAllString()
 	fmt.Println("# - A.45.5. Method FindAllString()");
@@ -66,6 +70,7 @@ func main() {
 		var str2 = regexExFive.FindAllString(textExFive, 1)
 		fmt.Println(str2)
 		// ["banana"]
+		println()
 
 	// A.45.6. Method ReplaceAllString()
 	fmt.Println("# - A.45.6. Method ReplaceAllString()");
@@ -75,6 +80,7 @@ func main() {
 		var strExSix = regexExSix.ReplaceAllString(textExSix, "potato")
 		fmt.Println(strExSix)
 		// "potato potato potato"
+		println()
 
 	// A.45.7. Method ReplaceAllStringFunc()
 	fmt.Println("# - A.45.7. Method ReplaceAllStringFunc()");
@@ -89,6 +95,7 @@ func main() {
 		})
 		fmt.Println(strExSeven)
 		// "banana potato soup"
+		println()
 
 	// A.45.8. Method Split()
 	fmt.Println("# - A.45.8. Method Split()");
@@ -98,4 +105,5 @@ func main() {
 		var strExEight = regexExEight.Split(textExEight, -1)
 		fmt.Printf("%#v \n", strExEight)
 		// []string{"", "n", "n", " ", "urger soup"}
+		println()
 }

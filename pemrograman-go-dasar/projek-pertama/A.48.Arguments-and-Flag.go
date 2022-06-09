@@ -41,4 +41,5 @@ func main() {
 		var data2 string
 		flag.StringVar(&data2, "gender", "male", "type your gender")
 		fmt.Println(data2)
+		fmt.Println();
 }

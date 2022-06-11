@@ -1,8 +1,10 @@
 package main
 
-import "net/http"
-import "fmt"
-import "html/template"
+import (
+    "net/http"
+    "fmt"
+    "html/template"
+)
 
 type Info struct {
     Affiliation string
@@ -39,6 +41,6 @@ func main() {
         }
     })
 
-    fmt.Println("server started at localhost:9000")
-    http.ListenAndServe(":9000", nil)
+    fmt.Println("server started at localhost:7000")
+    http.ListenAndServe(":7000", nil)
 }

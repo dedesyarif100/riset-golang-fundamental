@@ -1,7 +1,8 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
+	"reflect"
 	"strconv"
 )
 
@@ -10,98 +11,118 @@ func main() {
 	fmt.Println("# - A.43.1. Konversi Menggunakan strconv");
 		// • Fungsi strconv.Atoi()
 		fmt.Println("• Fungsi strconv.Atoi()");
-		var strExOneSecOne = "124"
-		var numExOneSecOne, errExOneSecOne = strconv.Atoi(strExOneSecOne)
-		// fmt.Println(strconv.Atoi(strExOneSecOne))
-		if errExOneSecOne == nil {
-			fmt.Println(numExOneSecOne) // 124
-		}
-		fmt.Println();
+			var strExOneSecOne = "124"
+			fmt.Println("STRING TO INT :", reflect.TypeOf(strExOneSecOne))
+			var numExOneSecOne, errExOneSecOne = strconv.Atoi(strExOneSecOne)
+			// fmt.Println(strconv.Atoi(strExOneSecOne))
+			if errExOneSecOne == nil {
+				fmt.Println("STRING TO INT :", reflect.TypeOf(numExOneSecOne)) // 124
+			}
+			fmt.Println();
 
 		// • Fungsi strconv.Itoa()
 		fmt.Println("• Fungsi strconv.Itoa()");
-		var numExOneSecTwo = 124
-		var strExOneSecTwo = strconv.Itoa(numExOneSecTwo)
-		fmt.Println(strExOneSecTwo) // "124"
-		fmt.Println();
+			var numExOneSecTwo = 124
+			fmt.Println("INT TO STRING :", reflect.TypeOf(numExOneSecOne))
+			var strExOneSecTwo = strconv.Itoa(numExOneSecTwo)
+			fmt.Println("INT TO STRING :", reflect.TypeOf(strExOneSecTwo)) // "124"
+			fmt.Println();
 
 		// • Fungsi strconv.ParseInt()
 		fmt.Println("• Fungsi strconv.ParseInt()");
-		var strExOneSecThree = "124"
-		var numExOneSecThree, errExOneSecThree = strconv.ParseInt(strExOneSecThree, 10, 64)
-		if errExOneSecThree == nil {
-			fmt.Println(numExOneSecThree) // 124
-		}
-		var str = "1010"
-		var num, err = strconv.ParseInt(str, 2, 8)
-		if err == nil {
-			fmt.Println(num) // 10
-		}
-		fmt.Println();
+			var strExOneSecThree = "124"
+			fmt.Println("STRING TO INT64 :", reflect.TypeOf(strExOneSecThree))
+			var numExOneSecThree, errExOneSecThree = strconv.ParseInt(strExOneSecThree, 10, 64)
+			if errExOneSecThree == nil {
+				fmt.Println("STRING TO INT64 :", reflect.TypeOf(numExOneSecThree)) // 124
+			}
+			fmt.Println("-----------------------")
+			var str = "1010"
+			fmt.Println("STRING TO INT64 :", reflect.TypeOf(str))
+			var num, err = strconv.ParseInt(str, 2, 8)
+			if err == nil {
+				fmt.Println("STRING TO INT64 :", reflect.TypeOf(num)) // 10
+			}
+			fmt.Println();
 
 		// • Fungsi strconv.FormatInt()
 		fmt.Println("• Fungsi strconv.FormatInt()");
-		var numExOneSecFour = int64(24)
-		var strExOneSecFour = strconv.FormatInt(numExOneSecFour, 8)
-		fmt.Println(strExOneSecFour) // 30
-		fmt.Println();
+			var numExOneSecFour = int64(24)
+			fmt.Println("INT64 TO STRING :", reflect.TypeOf(numExOneSecFour))
+			var strExOneSecFour = strconv.FormatInt(numExOneSecFour, 10)
+			fmt.Println("INT64 TO STRING :", reflect.TypeOf(strExOneSecFour)) // 24
+			fmt.Println();
 
 		// • Fungsi strconv.ParseFloat()
 		fmt.Println("• Fungsi strconv.ParseFloat()");
-		var strExOneSecFive = "24.12"
-		var numExOneSecFive, errExOneSecFive = strconv.ParseFloat(strExOneSecFive, 32)
-		if errExOneSecFive == nil {
-			fmt.Println(numExOneSecFive) // 24.1200008392334
-		}
-		fmt.Println();
+			var strExOneSecFive = "24.12"
+			fmt.Println("STRING TO FLOAT64 :", reflect.TypeOf(strExOneSecFive))
+			var numExOneSecFive, errExOneSecFive = strconv.ParseFloat(strExOneSecFive, 32)
+			if errExOneSecFive == nil {
+				fmt.Println("STRING TO FLOAT64 :", reflect.TypeOf(numExOneSecFive)) // 24.1200008392334
+			}
+			fmt.Println();
 
 		// • Fungsi strconv.FormatFloat()
 		fmt.Println("• Fungsi strconv.FormatFloat()");
-		var numExOneSecSix = float64(24.12)
-		var strExOneSecSix = strconv.FormatFloat(numExOneSecSix, 'f', 6, 64)
-		fmt.Println(strExOneSecSix) // 24.120000
-		fmt.Println();
+			var numExOneSecSix = float64(24.12)
+			fmt.Println("FLOAT64 TO STRING :", reflect.TypeOf(numExOneSecSix))
+			var strExOneSecSix = strconv.FormatFloat(numExOneSecSix, 'f', 6, 64)
+			fmt.Println("FLOAT64 TO STRING :", reflect.TypeOf(strExOneSecSix)) // 24.120000
+			fmt.Println();
 
 		// • Fungsi strconv.ParseBool()
 		fmt.Println("• Fungsi strconv.ParseBool()");
-		var strExOneSecSeven = "true"
-		var bulExOneSecSeven, errExOneSecSeven = strconv.ParseBool(strExOneSecSeven)
-		if errExOneSecSeven == nil {
-			fmt.Println(bulExOneSecSeven) // true
-		}
-		fmt.Println();
+			var strExOneSecSeven = "true"
+			fmt.Println("STRING TO BOOL :", reflect.TypeOf(strExOneSecSeven))
+			var bulExOneSecSeven, errExOneSecSeven = strconv.ParseBool(strExOneSecSeven)
+			if errExOneSecSeven == nil {
+				fmt.Println("STRING TO BOOL :", reflect.TypeOf(bulExOneSecSeven)) // true
+			}
+			fmt.Println();
 
 		// • Fungsi strconv.FormatBool()
 		fmt.Println("• Fungsi strconv.FormatBool()");
-		var bulExOneSecEight = true
-		var strExOneSecEight = strconv.FormatBool(bulExOneSecEight)
-		fmt.Println(strExOneSecEight) // true
-		fmt.Println();
+			var bulExOneSecEight = true
+			fmt.Println("BOOL TO STRING :", reflect.TypeOf(bulExOneSecEight))
+			var strExOneSecEight = strconv.FormatBool(bulExOneSecEight)
+			fmt.Println("BOOL TO STRING :", reflect.TypeOf(strExOneSecEight)) // true
+			fmt.Println();
 
+	fmt.Println("----------------------------------------------------")
 	// A.43.2. Konversi Data Menggunakan Teknik Casting
 	fmt.Println("# - A.43.2. Konversi Data Menggunakan Teknik Casting");
 		var castingOne float64 = float64(24);
-		fmt.Println(castingOne); // 24
+		fmt.Println("FLOAT64 TO INT32 :", reflect.TypeOf(castingOne)); // 24
 		var castingTwo int32 = int32(24.00);
-		fmt.Println(castingTwo); // 24
+		fmt.Println("FLOAT64 TO INT32 :", reflect.TypeOf(castingTwo)); // 24
 		fmt.Println();
 
 	// A.43.3. Casting string ↔ byte
 	fmt.Println("# - A.43.3. Casting string ↔ byte");
 		var text1 = "halo";
+		fmt.Println("STRING TO []UINT8 :", reflect.TypeOf(text1))
 		var b = []byte(text1);
+		fmt.Println("STRING TO []UINT8 :", reflect.TypeOf(b))
 		fmt.Printf("%d %d %d %d \n", b[0], b[1], b[2], b[3]);
 		// 104 97 108 111
+		fmt.Println("----------------")
 
 		var byte1 = []byte{104, 97, 108, 111}
+		fmt.Println("[]UINT8 TO STRING :", reflect.TypeOf(byte1))
 		var s = string(byte1)
+		fmt.Println("[]UINT8 TO STRING :", reflect.TypeOf(s))
 		fmt.Printf("%s \n", s)
 		// halo
+		fmt.Println("----------------")
 
 		var c int64 = int64('h')
+		fmt.Println("INT64 	:", reflect.TypeOf(c))
 		fmt.Println(c) // 104
+		fmt.Println("----------------")
 
-		var d string = string(104)
+		var d string = string([]byte{104})
+		fmt.Println("STRING 	:", reflect.TypeOf(d))
 		fmt.Println(d) // h
 		fmt.Println();
 
@@ -115,27 +136,28 @@ func main() {
 			"hobbies": []string{"eating", "sleeping"},
 		}
 
-		fmt.Println(data["nama"].(string));
-		fmt.Println(data["grade"].(int));
-		fmt.Println(data["height"].(float64));
-		fmt.Println(data["isMale"].(bool));
-		fmt.Println(data["hobbies"].([]string));
+		fmt.Println("NAMA	:", data["nama"].(string));
+		fmt.Println("GRADE	:", data["grade"].(int));
+		fmt.Println("HEIGHT	:", data["height"].(float64));
+		fmt.Println("ISMALE	:", data["isMale"].(bool));
+		fmt.Println("HOBBIES	:", data["hobbies"].([]string));
 
 		fmt.Println("---------------------------------------");
 		for _, val := range data {
 			switch val.(type) {
 				case string:
-					fmt.Println(val.(string));
+					fmt.Println("NAMA	:", val.(string));
 				case int:
-					fmt.Println(val.(int));
+					fmt.Println("GRADE	:", val.(int));
 				case float64:
-					fmt.Println(val.(float64));
+					fmt.Println("HEIGHT	:", val.(float64));
 				case bool:
-					fmt.Println(val.(bool));
+					fmt.Println("ISMALE	:", val.(bool));
 				case []string:
-					fmt.Println(val.([]string));
+					fmt.Println("HOBBY	:", val.([]string));
 				default:
-					fmt.Println(val.(int));
+					fmt.Println("DEFAULT	:",val.(int));
 			}
 		}
+		println()
 }

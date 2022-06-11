@@ -15,32 +15,32 @@ func main() {
 	//     return
 	// }
 
-	http.HandleFunc("/index", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/index", func(response http.ResponseWriter, request *http.Request) {
 		var data = M{"name": "Batman"}
 		var tmpl = template.Must(template.ParseFiles(
 			"views/index.html",
 			"views/_header.html",
 			"views/_message.html",
 		))
-		err := tmpl.ExecuteTemplate(w, "index", data)
+		err := tmpl.ExecuteTemplate(response, "index", data)
 		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
+			http.Error(response, err.Error(), http.StatusInternalServerError)
 		}
 	})
 
-	http.HandleFunc("/about", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/about", func(response http.ResponseWriter, request *http.Request) {
 		var data = M{"name": "Batman"}
 		var tmpl = template.Must(template.ParseFiles(
 			"views/about.html",
 			"views/_header.html",
 			"views/_message.html",
 		))
-		err := tmpl.ExecuteTemplate(w, "about", data)
+		err := tmpl.ExecuteTemplate(response, "about", data)
 		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
+			http.Error(response, err.Error(), http.StatusInternalServerError)
 		}
 	})
 
-	fmt.Println("server started at localhost:9000")
-	http.ListenAndServe(":9000", nil)
+	fmt.Println("server started at localhost:7000")
+	http.ListenAndServe(":7000", nil)
 }

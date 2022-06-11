@@ -9,13 +9,17 @@ func main() {
 	// A.49.1. Penggunaan Exec
 	fmt.Println("# - A.49.1. Penggunaan Exec");
 		var output1, _ = exec.Command("ls").Output()
-		fmt.Printf(" -> ls\n%s\n", string(output1))
+		fmt.Printf(" -> ls\n%s\n", output1)
 
 		var output2, _ = exec.Command("pwd").Output()
-		fmt.Printf(" -> pwd\n%s\n", string(output2))
+		fmt.Print("OUTPUT :", string(output2))
+		fmt.Printf(" -> pwd\n%s\n", output2)
 
 		var output3, _ = exec.Command("git", "config", "user.name").Output()
-		fmt.Printf(" -> git config user.name\n%s\n", string(output3))
+		fmt.Print("OUTPUT :", string(output3))
+		fmt.Printf(" -> git config user.name\n%s\n", output3)
+
+		// var output4
 
 	// A.49.2. Rekomendasi Penggunaan Exec
 	fmt.Println("# - A.49.2. Rekomendasi Penggunaan Exec");

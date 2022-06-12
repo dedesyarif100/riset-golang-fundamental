@@ -1,11 +1,16 @@
 package main
 
-import "net/http"
-import "fmt"
-import "html/template"
+import (
+    "fmt"
+    "net/http"
+    "html/template"
+)
 
+var num = 0
 var funcMap = template.FuncMap{
     "unescape": func(s string) template.HTML {
+        num++
+        fmt.Println(num)
         return template.HTML(s)
     },
     "avg": func(n ...int) int {
@@ -28,6 +33,6 @@ func main() {
         }
     });
 
-    fmt.Println("server started at localhost:9000")
-    http.ListenAndServe(":9000", nil)
+    fmt.Println("server started at localhost:7000")
+    http.ListenAndServe(":7000", nil)
 }

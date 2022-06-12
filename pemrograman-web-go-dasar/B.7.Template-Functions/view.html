@@ -4,74 +4,113 @@
 </head>
 
 <body>
-    <!-- B.7.2. Fungsi Escape String -->
-        <p>
-            {{html "<h2>Hello</h2>"}}
-        </p>
+    <table>
+        <!-- B.7.2. Fungsi Escape String -->
+            <tr>
+                <td>ESCAPE STRING</td>
+                <td> : <p>{{html "<h2>Hello</h2>"}}</p></td>
+            </tr>
+            <tr><td>-----------------------------------------------------------------------</td></tr>
 
-    <!-- B.7.3. Fungsi Operator Perbandingan -->
-        {{$value := 61}}
-        <!-- {{$value}} -->
-        {{if gt $value 60}}
-            LULUS
-        {{else}}
-            TIDAK LULUS
-        {{end}}
+        <!-- B.7.3. Fungsi Operator Perbandingan -->
+            <tr>
+                {{$value := 61}}
+                {{if gt $value 60}}
+                    <td>OPERATOR PERBANDINGAN</td>
+                    <td>: LULUS</td>
+                {{else}}
+                    <td>OPERATOR PERBANDINGAN</td>
+                    <td>: TIDAK LULUS</td>
+                {{end}}
+            </tr>
+            <tr><td>-----------------------------------------------------------------------</td></tr>
 
-        {{if eq .Name "Bruce Wayne"}}
-            <p>I'm the Batman!</p>
-        {{else if ne .Name "Clark Kent"}}
-            <p>I'm neither Batman or Superman</p>
-        {{end}}
+            <tr>
+                {{if eq .Name "Bruce Wayne"}}
+                    <td>OPERATOR PERBANDINGAN</td>
+                    <td>: <p>I'm the Batman!</p></td>
+                {{else if ne .Name "Clark Kent"}}
+                    <td>OPERATOR PERBANDINGAN</td>
+                    <td>: <p>I'm neither Batman or Superman</p></td>
+                {{end}}
+            </tr>
+            <tr><td>-----------------------------------------------------------------------</td></tr>
 
-        {{$ValA := 12}}
-        {{$ValB := 20}}
-        <p>
-            {{if le $ValA 12}}
-                LULUS
-            {{else}}
-                TIDAK LULUS
-            {{end}}
-        </p>
+            <tr>
+                {{$ValA := 12}}
+                {{$ValB := 20}}
+                {{if le $ValA 12}}
+                    <td>OPERATOR PERBANDINGAN</td>
+                    <td>: LULUS</td>
+                {{else}}
+                    <td>OPERATOR PERBANDINGAN</td>
+                    <td>: TIDAK LULUS</td>
+                {{end}}
+            </tr>
+            <tr><td>-----------------------------------------------------------------------</td></tr>
 
-        <p>
-            {{if gt $ValA 12}}
-                LULUS
-            {{else}}
-                TIDAK LULUS
-            {{end}}
-        </p>
+            <tr>
+                {{if gt $ValA 12}}
+                    <td>OPERATOR PERBANDINGAN</td>
+                    <td>: LULUS</td>
+                {{else}}
+                    <td>OPERATOR PERBANDINGAN</td>
+                    <td>: TIDAK LULUS</td>
+                {{end}}
+            </tr>
+            <tr><td>-----------------------------------------------------------------------</td></tr>
 
-    <!-- B.7.4. Pemanggilan Method -->
-        <p>
-            {{.SayHello "Gotham citizen" "You are our hero!"}}
-        </p>
+        <!-- B.7.4. Pemanggilan Method -->
+            <tr>
+                <td>PEMANGGILAN METHOD</td>
+                <td>
+                    : <p>{{.SayHello "Gotham citizen" "You are our hero!"}}</p>
+                </td>
+            </tr>
+            <tr><td>-----------------------------------------------------------------------</td></tr>
 
-    <!-- B.7.5. Fungsi String -->
-        <p>
-            {{printf "%s because I'm %s" "You know why?" "Batman!"}}
-        </p>
-    
-    <!-- B.7.6. Fungsi len dan index -->
-        <p>
-            Batman have many friends. <strong>{{len .Friends}}</strong> of them are:
-            <strong>
-                {{index .Friends 0}},
-                {{index .Friends 1}},
-                {{index .Friends 2}}
-            </strong>
-        </p>
+        <!-- B.7.5. Fungsi String -->
+            <tr>
+                <td>FUNGSI STRING</td>
+                <td>
+                    : <p>{{printf "%s because I'm %s" "You know why?" "Batman!"}}</p>
+                </td>
+            </tr>
+            <tr><td>-----------------------------------------------------------------------</td></tr>
 
-    <!-- B.7.7. Fungsi Operator Logika -->
-        {{$cond1 := false}}
-        {{$cond2 := false}}
+        <!-- B.7.6. Fungsi len dan index -->
+            <tr>
+                <td>FUNGSI LEN DAN INDEX</td>
+                <td> :
+                    <p>
+                        Batman have many friends. <strong>{{len .Friends}}</strong> of them are:
+                        <strong>
+                            {{index .Friends 0}},
+                            {{index .Friends 1}},
+                            {{index .Friends 2}}
+                        </strong>
+                    </p>
+                </td>
+            </tr>
+            <tr><td>-----------------------------------------------------------------------</td></tr>
 
-        {{if and $cond1 $cond2}}
-            <strong>TRUE TRUE</strong>
-        {{else if or $cond1 $cond2}}
-            <strong>TRUE FALSE</strong>
-        {{else}}
-            <strong>FALSE FALSE</strong>
-        {{end}}
+        <!-- B.7.7. Fungsi Operator Logika -->
+            <tr>
+                {{$cond1 := false}}
+                {{$cond2 := false}}
+                {{if and $cond1 $cond2}}
+                    <td>FUNGSI OPERATOR LOGIKA</td>
+                    <td>: <strong>TRUE TRUE</strong></td>
+                {{else if or $cond1 $cond2}}
+                    <td>FUNGSI OPERATOR LOGIKA</td>
+                    <td>: <strong>TRUE FALSE</strong></td>
+                {{else}}
+                    <td>FUNGSI OPERATOR LOGIKA</td>
+                    <td>: <strong>FALSE FALSE</strong></td>
+                {{end}}
+            </tr>
+
+    </table>
+
 </body>
 </html>

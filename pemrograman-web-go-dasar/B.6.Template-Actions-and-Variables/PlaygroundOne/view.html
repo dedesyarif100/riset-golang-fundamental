@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <!-- B.6.2. Pipeline Output & Komentar -->
+            <tr>
+                {{/* example how to use actions */}}
+                <td>{{"Name"}}</td>
+                <td>: {{.Name}} </td>
+            </tr>
+        <!-- B.6.3. Membuat & Menampilkan Isi Variabel -->
+            <tr>
+                <td>Gender</td>
+                {{$Gender := .Gender}}
+                <td style="text-transform: capitalize;">
+                    : {{$Gender}}
+                </td>
+            </tr>
+        <!-- B.6.4. Perulangan -->
+            <tr>
+                <td>Hobbies</td>
+                <td>:
+                    {{range $key, $value := .Hobbies}}
+                        {{$value}},
+                    {{end}}
+                </td>
+            </tr>
+        <!-- B.6.5. Pengaksesan Property Variabel Objek -->
+            <tr>
+                <td>Affiliation</td>
+                <td>: {{.Info.Affiliation}} ( <b>{{.Info.GetAffiliationDetailInfo}}</b> ) </td>
+            </tr>
+        <!-- B.6.6. Penggunaan Keyword with Untuk Mengganti Scope Variabel Pada Suatu Blok -->
+            <tr>
+                {{with .Info}}
+                    <td>Address</td>
+                    <td>: {{.Address}}</td>
+                {{end}}
+            </tr>
+        <!-- B.6.7. Seleksi Kondisi -->
+            <tr>
+                {{if eq .Name "DEDE SYARIF"}}
+                    <td>Name</td>
+                    <td colspan="2" style="font-weight: bold;">
+                        : I'm the Batman!
+                    </td>
+                {{end}}
+            </tr>
+
+            <tr>
+                {{if eq .IsTrue true}}
+                    <td>Is True</td>
+                    <td>
+                        : <strong>TRUE</strong>
+                    </td>
+                {{else}}
+                    <td>Is True</td>
+                    <td>
+                        : <strong>FALSE</strong>
+                    </td>
+                {{end}}
+            </tr>
+
+            <tr>
+                {{if eq .Abjad "A"}}
+                    <td>Abjad</td>
+                    <td>
+                        : <strong>{{.Abjad}} </strong>IS TRUE
+                    </td>
+                {{else if ne .Abjad "A"}}
+                    <td>Abjad</td>
+                    <td>
+                        : <strong>{{.Abjad}} </strong>IS FALSE
+                    </td>
+                {{end}}
+            </tr>
+
+    </table>
+</body>
+</html>

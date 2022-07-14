@@ -50,10 +50,14 @@ func main() {
 		fmt.Println("filtered number :", newNumbers)
 
 		// Closure bisa juga dengan gaya manifest typing, caranya dengan menuliskan skema closure-nya sebagai tipe data. Contoh:
-		// var closure (func (string, int, []string) int)
-		// closure = func (a string, b int, c []string) int {
-		// 	// ..
-		// }
+		var closure (func (string, int, []string) int)
+		closure = func (a string, b int, c []string) int {
+			val := len(a) + b + len(c[0])
+			return val
+		}
+		val := closure("TES", 5, []string{"DEDE"})
+
+		fmt.Println("CLOSURE :", val)
 		println()
 
 	// A.21.3. Closure Sebagai Nilai Kembalian >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

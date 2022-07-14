@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	// "reflect"
+	// "math"
+)
 
 func main() {
 	// A.12.1. Operator Aritmatika

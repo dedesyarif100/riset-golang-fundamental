@@ -24,7 +24,7 @@ func main() {
             "grade"     : 2,
             "name"      : "ethan hunt",
         };
-        fmt.Println("DATA :", data);
+        fmt.Println("DATA   :", data);
         fmt.Println();
 
     // A.28.2. Type Alias Any
@@ -36,7 +36,7 @@ func main() {
             "grade"     : 2,
             "breakfast" : []string{"apple", "manggo", "banana"},
         }
-        fmt.Println("DATA :", exampleTwo);
+        fmt.Println("DATA   :", exampleTwo);
         fmt.Println();
 
     // A.28.3. Casting Variabel Interface Kosong

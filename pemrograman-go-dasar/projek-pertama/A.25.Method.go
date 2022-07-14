@@ -35,9 +35,9 @@ func main() {
 		var s1 = exampleTwo{"DEDE", 22}
 		fmt.Println("before", s1.name)
 		s1.changeName1("jason bourne")
-		fmt.Println("s1 after changeName1", s1.name) // john wick
+		fmt.Println("S1 AFTER CHANGE NAME 1 :", s1.name) // john wick
 		s1.changeName2("ethan hunt")
-		fmt.Println("s1 after changeName2", s1.name) // ethan hunt
+		fmt.Println("S1 AFTER CHANGE NAME 2 :", s1.name) // ethan hunt
 		fmt.Println("--------------------------")
 
 		// pengaksesan method dari variabel objek biasa

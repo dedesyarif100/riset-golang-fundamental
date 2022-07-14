@@ -1,8 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"encoding/json"
+	"fmt"
+	// "reflect"
 )
 
 type User struct {
@@ -24,6 +25,7 @@ func main() {
 	fmt.Println("# - A.53.1. Decode JSON Ke Variabel Objek Struct");
 		var jsonString = `{"Name": "john wick", "umur": 27, "pekerjaan": "SOFTWARE ENGINEER", "keahlian": "GOLANG, NODEJS, LARAVEL"}`;
 		var jsonData = []byte(jsonString);
+		// fmt.Println(jsonData)
 
 		var data User;
 		// fmt.Println(jsonString);

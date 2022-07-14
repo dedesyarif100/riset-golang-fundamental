@@ -114,8 +114,8 @@ func main() {
 		var resultExampleOne exampleOne
 		resultExampleOne.name = "john wick"
 		resultExampleOne.grade = 2
-		fmt.Println("name  :", resultExampleOne.name)
-		fmt.Println("grade :", resultExampleOne.grade)
+		fmt.Println("NAME  :", resultExampleOne.name)
+		fmt.Println("GRADE :", resultExampleOne.grade)
         fmt.Println();
 
 	// A.24.3. Inisialisasi Object Struct
@@ -125,19 +125,19 @@ func main() {
 		resultExampleThree_SectionOne.grade = 2
 		var resultExampleThree_SectionTwo = exampleThree{"ethan", 11}
 		var resultExampleThree_SectionThree = exampleThree{name: "jason"}
-		fmt.Println("resultExampleThree_SectionOne name :", resultExampleThree_SectionOne.name)
-		fmt.Println("resultExampleThree_SectionOne grade :", resultExampleThree_SectionOne.grade)
-		fmt.Println("resultExampleThree_SectionTwo name :", resultExampleThree_SectionTwo.name)
-		fmt.Println("resultExampleThree_SectionThree name :", resultExampleThree_SectionThree.name)
+		fmt.Println("resultExampleThree_SectionOne name 	:", resultExampleThree_SectionOne.name)
+		fmt.Println("resultExampleThree_SectionOne grade 	:", resultExampleThree_SectionOne.grade)
+		fmt.Println("resultExampleThree_SectionTwo name 	:", resultExampleThree_SectionTwo.name)
+		fmt.Println("resultExampleThree_SectionThree name 	:", resultExampleThree_SectionThree.name)
 
 		fmt.Println("-------------------------------------------------");
 		var resultExampleThree_SectionFour = exampleThree{name: "wayne", grade: 2}
 		var resultExampleThree_SectionFive = exampleThree{grade: 11, name: "bruce"}
-		fmt.Println("resultExampleThree_SectionFour name :", resultExampleThree_SectionFour.name)
-		fmt.Println("resultExampleThree_SectionFour grade :", resultExampleThree_SectionFour.grade)
+		fmt.Println("resultExampleThree_SectionFour name 	:", resultExampleThree_SectionFour.name)
+		fmt.Println("resultExampleThree_SectionFour grade 	:", resultExampleThree_SectionFour.grade)
 
-		fmt.Println("resultExampleThree_SectionFive name :", resultExampleThree_SectionFive.name)
-		fmt.Println("resultExampleThree_SectionFive grade :", resultExampleThree_SectionFive.grade)
+		fmt.Println("resultExampleThree_SectionFive name 	:", resultExampleThree_SectionFive.name)
+		fmt.Println("resultExampleThree_SectionFive grade 	:", resultExampleThree_SectionFive.grade)
         fmt.Println();
 
 	// A.24.4. Variabel Objek Pointer
@@ -148,59 +148,59 @@ func main() {
 		fmt.Println("resultExampleFour_SectionOne, name :", resultExampleFour_SectionOne.name)
 		fmt.Println("resultExampleFour_SectionTwo, name :", resultExampleFour_SectionTwo.name)
 
-		resultExampleFour_SectionTwo.name = "ethan"
+		resultExampleFour_SectionTwo.name = "HENDRO"
 		fmt.Println("resultExampleFour_SectionOne, name :", resultExampleFour_SectionOne.name)
 		fmt.Println("resultExampleFour_SectionTwo, name :", resultExampleFour_SectionTwo.name)
         fmt.Println();
 
 	// A.24.5. Embedded Struct
 	fmt.Println("# - A.24.5. Embedded Struct");
-		var resultExampleFive_SectionOne = derivativeExampleFive{}
-		resultExampleFive_SectionOne.name = "wick"
-		resultExampleFive_SectionOne.age = 21
-		resultExampleFive_SectionOne.grade = 2
+		var resultExampleFive = derivativeExampleFive{}
+		resultExampleFive.name = "WICK"
+		resultExampleFive.age = 21
+		resultExampleFive.grade = 2
 
-		fmt.Println("name  :", resultExampleFive_SectionOne.name)
-		fmt.Println("age   :", resultExampleFive_SectionOne.age)
-		fmt.Println("name  :", resultExampleFive_SectionOne.exampleFive.name)
-		fmt.Println("age   :", resultExampleFive_SectionOne.exampleFive.age)
-		fmt.Println("grade :", resultExampleFive_SectionOne.grade)
+		fmt.Println("NAME  :", resultExampleFive.name)
+		fmt.Println("AGE   :", resultExampleFive.age)
+		fmt.Println("NAME  :", resultExampleFive.exampleFive.name)
+		fmt.Println("AGE   :", resultExampleFive.exampleFive.age)
+		fmt.Println("GRADE :", resultExampleFive.grade)
         fmt.Println();
 
 	// A.24.6. Embedded Struct Dengan Nama Property Yang Sama
 	fmt.Println("# - A.24.6. Embedded Struct Dengan Nama Property Yang Sama");
-		var resultExampleSix_SectionOne = derivativeExampleSix{}
-		resultExampleSix_SectionOne.name = "DEDE"
-		resultExampleSix_SectionOne.age = 21
-		resultExampleSix_SectionOne.exampleSix.age = 22
+		var resultExampleSix = derivativeExampleSix{}
+		resultExampleSix.name = "DEDE"
+		resultExampleSix.age = 21
+		resultExampleSix.exampleSix.age = 22
 
-		fmt.Println(resultExampleSix_SectionOne.name)
-		fmt.Println(resultExampleSix_SectionOne.age)
-		fmt.Println(resultExampleSix_SectionOne.exampleSix.age)
+		fmt.Println("NAME		:", resultExampleSix.name)
+		fmt.Println("AGE		:", resultExampleSix.age)
+		fmt.Println("AGE EXAMPLE SIX	:", resultExampleSix.exampleSix.age)
         fmt.Println();
 
 	// A.24.7. Pengisian Nilai Sub-Struct
 	fmt.Println("# - A.24.7. Pengisian Nilai Sub-Struct");
-		var resultExampleSeven_SectionOne = exampleSeven{name: "DEDE", age: 25}
-		var derivativeExampleSeven = derivativeExampleSeven{exampleSeven: resultExampleSeven_SectionOne, grade: 22}
+		var resultExampleSeven = exampleSeven{name: "DEDE", age: 25}
+		var derivativeExampleSeven = derivativeExampleSeven{exampleSeven: resultExampleSeven, grade: 22}
 
-		fmt.Println("name  :", derivativeExampleSeven.exampleSeven.name)
-		fmt.Println("age   :", derivativeExampleSeven.exampleSeven.age)
-		fmt.Println("grade :", derivativeExampleSeven.grade)
+		fmt.Println("NAME  :", derivativeExampleSeven.exampleSeven.name)
+		fmt.Println("AGE   :", derivativeExampleSeven.exampleSeven.age)
+		fmt.Println("GRADE :", derivativeExampleSeven.grade)
         fmt.Println();
 
 	// A.24.8. Anonymous Struct
 	fmt.Println("# - A.24.8. Anonymous Struct");
 		var derivativeExampleEight = struct {
-			exampleEight
+			Eight exampleEight
 			grade int
 		}{}
-		derivativeExampleEight.exampleEight = exampleEight{"wick", 21}
+		derivativeExampleEight.Eight = exampleEight{"wick", 21}
 		derivativeExampleEight.grade = 2
 
-		fmt.Println("name  :", derivativeExampleEight.exampleEight.name)
-		fmt.Println("age   :", derivativeExampleEight.exampleEight.age)
-		fmt.Println("grade :", derivativeExampleEight.grade)
+		fmt.Println("NAME  :", derivativeExampleEight.Eight.name)
+		fmt.Println("AGE   :", derivativeExampleEight.Eight.age)
+		fmt.Println("GRADE :", derivativeExampleEight.grade)
 
 		fmt.Println("-------------------------------------------------");
 		// anonymous struct tanpa pengisian property
@@ -218,8 +218,8 @@ func main() {
 			grade:  2,
 		}
 		fmt.Println(exEightSectionOne.exampleEight)
-		fmt.Println("name : ", exEightSectionTwo.exampleEight.name)
-		fmt.Println("age  : ", exEightSectionTwo.exampleEight.age)
+		fmt.Println("NAME : ", exEightSectionTwo.exampleEight.name)
+		fmt.Println("AGE  : ", exEightSectionTwo.exampleEight.age)
         fmt.Println();
 
 	// A.24.9. Kombinasi Slice & Struct
@@ -231,7 +231,7 @@ func main() {
 		}
 
 		for _, student := range exampleNine {
-			fmt.Println(student.name, "age is", student.age)
+			fmt.Println(student.name, "AGE IS", student.age)
 		}
         fmt.Println();
 
@@ -259,7 +259,7 @@ func main() {
 		}
 		derivativeExampleEleven_SectionOne.exampleEleven = exampleEleven{"DEDE", 21}
 		derivativeExampleEleven_SectionOne.grade = 2
-		fmt.Println(derivativeExampleEleven_SectionOne)
+		fmt.Println("DATA	:", derivativeExampleEleven_SectionOne)
 		fmt.Println("-------------------------------------------------");
 		// deklarasi sekaligus inisialisasi
 		var derivativeExampleEleven_SectionTwo = struct {
@@ -269,7 +269,7 @@ func main() {
 			exampleEleven{"HEND", 25},
 			21,
 		}
-		fmt.Println(derivativeExampleEleven_SectionTwo)
+		fmt.Println("DATA	:", derivativeExampleEleven_SectionTwo)
         fmt.Println();
 
 	// A.24.12. Nested struct
@@ -300,8 +300,8 @@ func main() {
 	fmt.Println("# - A.24.13. Deklarasi Dan Inisialisasi Struct Secara Horizontal");
 		var resultExampleThirTeen_SectionOne = struct { name string; age int } { age: 22, name: "DEDE" }
 		var resultExampleThirTeen_SectionTwo = struct { name string; age int } { "RIAN", 24 }
-		fmt.Println(resultExampleThirTeen_SectionOne)
-		fmt.Println(resultExampleThirTeen_SectionTwo)
+		fmt.Println("DATA	:", resultExampleThirTeen_SectionOne)
+		fmt.Println("DATA	:", resultExampleThirTeen_SectionTwo)
         fmt.Println();
 
 	// A.24.14. Tag property dalam struct
@@ -312,11 +312,11 @@ func main() {
 	fmt.Println("# - A.24.15. Type Alias");
 		var p1 = exampleFiveTeen{"DEDE", 22}
 		var p2 = derivativeExampleFiveTeen{"HEND", 22}
-		fmt.Println(p1)
-		fmt.Println(p2)
+		fmt.Println("DATA	:", p1)
+		fmt.Println("DATA	:", p2)
 		fmt.Println("-------------------------------------------------");
 		derivativeExampleFiveTeen := exampleFiveTeen{"DEDE", 22}
-		fmt.Println(exampleFiveTeen(derivativeExampleFiveTeen))
+		fmt.Println("DATA	:", exampleFiveTeen(derivativeExampleFiveTeen))
 		// exampleFiveTeen := derivativeExampleFiveTeen{"HEND", 22}
 		// fmt.Println(derivativeExampleFiveTeen(exampleFiveTeen))
 
@@ -331,21 +331,23 @@ func main() {
 		}
 		var a = People1{"DEDE", 11}
 		var b = People2{"HEND", 22}
-		fmt.Println(a)
-		fmt.Println(b)
+		var c = People2{age: 23, name: "TRISULI"}
+		fmt.Println("DATA	:", a)
+		fmt.Println("DATA	:", b)
+		fmt.Println("DATA	:", c)
 
 		fmt.Println("-------------------------------------------------");
 		// TYPE NUMBER ADALAH ALIAS DARI TYPE INTEGER
 		type Number = int
 		var num Number = 12
-		fmt.Println(num)
+		fmt.Println("DATA	:", num)
 
 		type Huruf = string
 		var valString Huruf = "HALLO"
-		fmt.Println(valString);
+		fmt.Println("DATA	:", valString);
 
 		type ArrayInt = []int
 		var arrayInt ArrayInt = []int{1, 2, 3}
-		fmt.Println(arrayInt);
+		fmt.Println("DATA	:", arrayInt);
 		fmt.Println();
 }

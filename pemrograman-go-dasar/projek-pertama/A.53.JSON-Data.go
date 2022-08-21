@@ -23,7 +23,12 @@ type Merchant struct {
 func main() {
 	// A.53.1. Decode JSON Ke Variabel Objek Struct
 	fmt.Println("# - A.53.1. Decode JSON Ke Variabel Objek Struct");
-		var jsonString = `{"Name": "john wick", "umur": 27, "pekerjaan": "SOFTWARE ENGINEER", "keahlian": "GOLANG, NODEJS, LARAVEL"}`;
+		var jsonString = `{
+							"Name": "john wick", 
+							"umur": 27, 
+							"pekerjaan": "SOFTWARE ENGINEER", 
+							"keahlian": "GOLANG, NODEJS, LARAVEL"
+						}`;
 		var jsonData = []byte(jsonString);
 		// fmt.Println(jsonData)
 
@@ -58,6 +63,8 @@ func main() {
 		json.Unmarshal(jsonData, &data2);
 
 		var decodedData = data2.(map[string]interface{});
+		// fmt.Println("TES 		:", reflect.TypeOf(decodedData))
+
 		fmt.Println("USER 		:", decodedData["Name"]);
 		fmt.Println("AGE  		:", decodedData["umur"]);
 		fmt.Println("VOCATION  	:", decodedData["pekerjaan"]);
@@ -67,14 +74,24 @@ func main() {
 	// A.53.3. Decode Array JSON Ke Array Objek
 	fmt.Println("# - A.53.3. Decode Array JSON Ke Array Objek");
 		var jsonStringExThree = `[
-			{"FullName": "john wick", "Age": 27, "Vocation": "SOFTWARE ENGINEER", "Skill": "GOLANG"},
-			{"FullName": "ethan hunt", "Age": 32, "Vocation": "BACKEND ENGINEER", "Skill": "LARAVEL"}
+			{
+				"FullName": "john wick", 
+				"Age": 27, 
+				"Vocation": "SOFTWARE ENGINEER", 
+				"Skill": "GOLANG"
+			},
+			{
+				"FullName": "ethan hunt", 
+				"Age": 32, 
+				"Vocation": "BACKEND ENGINEER", 
+				"Skill": "LARAVEL"
+			}
 		]`;
 
 		var dataExThree []Merchant;
 		
 		var errExThree = json.Unmarshal([]byte(jsonStringExThree), &dataExThree);
-		fmt.Println( dataExThree );
+		fmt.Printf("DATA TANPA DI MAPPING : %#v \n\n", dataExThree);
 		if errExThree != nil {
 			fmt.Println(errExThree.Error());
 			return;

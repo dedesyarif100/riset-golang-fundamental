@@ -22,10 +22,14 @@ func main() {
 	fmt.Println("# - A.48.2. Penggunaan Flag");
 		var name = flag.String("name", "anonymous", "type your name")
 		var age = flag.Int64("age", 25, "type your age")
+		fork := flag.Bool("fork", false, "a bool")
+		flag.Duration()
 
 		flag.Parse()
 		fmt.Printf("name\t: %s\n", *name)
 		fmt.Printf("age\t: %d\n", *age)
+		fmt.Printf("fork\t: %t\n", *fork)
+
 
 		// var dataName = flag.String("name", "anonymous", "type your name")
 		// fmt.Println(*dataName)

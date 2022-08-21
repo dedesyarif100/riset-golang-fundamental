@@ -42,6 +42,11 @@ func main() {
     // A.28.3. Casting Variabel Interface Kosong
     fmt.Println("# - A.28.3. Casting Variabel Interface Kosong");
         var exampleThree interface{};
+        // fmt.Println("CEK DATA :", exampleThree)
+
+        exampleThree = []int{1, 2, 3, 4, 5}
+        var arrayNumber = append(exampleThree.([]int), 6)
+        fmt.Println("DATA       :", arrayNumber);
 
         exampleThree = 2;
         var number = exampleThree.(int) * 10;

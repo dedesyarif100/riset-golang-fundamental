@@ -17,6 +17,9 @@ func apelHijau(name string) {
 type Student struct {
     Name  	string
     Grade 	int
+	Address string
+	Data []int
+	// mapel 	string
 }
 
 

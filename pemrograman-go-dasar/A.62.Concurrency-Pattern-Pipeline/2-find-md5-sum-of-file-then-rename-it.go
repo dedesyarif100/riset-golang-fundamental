@@ -1,66 +1,69 @@
 package main
 
 import (
-    "crypto/md5"
-    "fmt"
-    "io/ioutil"
-    "log"
-    "os"
-    "path/filepath"
-    "time"
+	"crypto/md5"
+	"fmt"
+	"io/ioutil"
+	"log"
+	"os"
+	"path/filepath"
+	"time"
 )
 
-var tempPathTwo = filepath.Join(os.Getenv("TEMP"), "FILE TEMPORARY")
+var tempPathTwo = filepath.Join(os.Getenv("TEMP"), "chapter-A.59-pipeline-temp")
 
 func main() {
-    log.Println("start")
-    start := time.Now()
+	log.Println("start")
+	start := time.Now()
 
-    proceed()
+	proceed()
 
-    duration := time.Since(start)
-    log.Println("done in", duration.Seconds(), "seconds")
+	duration := time.Since(start)
+	log.Println("done in", duration.Seconds(), "seconds")
 }
 
 func proceed() {
-    counterTotal := 0
-    counterRenamed := 0
-    err := filepath.Walk(tempPathTwo, func(path string, info os.FileInfo, err error) error {
+	counterTotal := 0
+	counterRenamed := 0
+	err := filepath.Walk(tempPathTwo, func(path string, info os.FileInfo, err error) error {
+		// fmt.Println("PATH : ", path)
 
-        // if there is an error, return immediatelly
-        if err != nil {
-            return err
-        }
+		// if there is an error, return immediatelly
+		if err != nil {
+			return err
+		}
 
-        // if it is a sub directory, return immediatelly
-        if info.IsDir() {
-            return nil
-        }
+		// if it is a sub directory, return immediatelly
+		if info.IsDir() {
+			return nil
+		}
 
-        counterTotal++
+		counterTotal++
+		// fmt.Println("COUNTER : ", counterTotal)
 
-        // read file
-        buf, err := ioutil.ReadFile(path)
-        if err != nil {
-            return err
-        }
+		// read file
+		buf, err := ioutil.ReadFile(path)
+		if err != nil {
+			return err
+		}
 
-        // sum it
-        sum := fmt.Sprintf("%x", md5.Sum(buf))
+		// sum it
+		sum := fmt.Sprintf("%x", md5.Sum(buf))
+		// fmt.Println("SUM : ", sum)
 
-        // rename file
-        destinationPath := filepath.Join(tempPathTwo, fmt.Sprintf("file-%s.txt", sum))
-        err = os.Rename(path, destinationPath)
-        if err != nil {
-            return err
-        }
+		// rename file
+		destinationPath := filepath.Join(tempPathTwo, fmt.Sprintf("file-%s.txt", sum))
+		err = os.Rename(path, destinationPath)
+		if err != nil {
+			return err
+		}
 
-        counterRenamed++
-        return nil
-    })
-    if err != nil {
-        log.Println("ERROR:", err.Error())
-    }
+		counterRenamed++
+		return nil
+	})
+	if err != nil {
+		log.Println("ERROR:", err.Error())
+	}
 
-    log.Printf("%d/%d files renamed", counterRenamed, counterTotal)
+	log.Printf("%d/%d files renamed", counterRenamed, counterTotal)
 }
